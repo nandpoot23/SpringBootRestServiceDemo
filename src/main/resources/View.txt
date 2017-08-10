@@ -1,0 +1,20 @@
+Get method:-
+
+http://localhost:6070/multipleCustomer/v1/welcome
+http://localhost:6070/multipleCustomer/v1/qeRow
+
+Post method:-
+
+http://localhost:6070/multipleCustomer/v1/empConfig
+http://localhost:6070/multipleCustomer/v1/custDetails
+http://localhost:6070/multipleCustomer/v1/myCustomer
+http://localhost:6070/multipleCustomer/v1/userExist
+http://localhost:6070/multipleCustomer/v1/custAddress
+http://localhost:6070/multipleCustomer/v1/custAddressCommon
+http://localhost:6070/multipleCustomer/v1/custEmail
+http://localhost:6070/multipleCustomer/v1/itemConfig
+http://localhost:6070/multipleCustomer/v1/marketConfig
+http://localhost:6070/multipleCustomer/v1/marketEffective
+http://localhost:6070/multipleCustomer/v1/vendorConfig
+http://localhost:6070/multipleCustomer/v1/custDetailsHibernate
+http://localhost:6070/multipleCustomer/v1/CustOffer

@@ -1,0 +1,158 @@
+*****************************************************************************************************************
+
+REST (Representational State Transfer) is an architectural style with which Web Services can be designed that 
+serves resources based on the request from client. A Web Service is a unit of managed code, that can be invoked 
+using HTTP requests. Let me put it simple for those who are new to Web Service.You develop the core functionality 
+of your application, deploy it in a server and expose to the network. Once it is exposed, it can be accessed 
+using URI's through HTTP requests from a variety of client applications. Instead of repeating the same 
+functionality in multiple client (web, desktop and mobile) applications, you write it once and access it in all 
+the applications. 
+
+*****************************************************************************************************************
+
+Features of RESTful web services:-
+
+Resource identification through URI:- Resources are identified by their URIs (typically links on internet). So, 
+a client can directly access a RESTful Web Services using the URIs of the resources (same as you put a website 
+address in the browser’s address bar and get some representation as response).
+
+Uniform interface:- Resources are manipulated using a fixed set of four create, read, update, delete operations: 
+PUT, GET, POST, and DELETE.
+
+Client-Server:- A clear separation concerns is the reason behind this constraint. Separating concerns between 
+the Client and Server helps improve portability in the Client and Scalability of the server components.
+
+Stateless:- Each request from client to server must contain all the information necessary to understand the 
+request, and cannot take advantage of any stored context on the server.
+
+Cache:- To improve network efficiency responses must be capable of being labeled as cacheable or non-cacheable.
+
+Named resources:- The system is comprised of resources which are named using a URL.
+
+Interconnected resource representations:- The representations of the resources are interconnected using URLs, 
+thereby enabling a client to progress from one state to another.
+
+Layered components:- Intermediaries, such as proxy servers, cache servers, gateways, etc, can be inserted between 
+clients and resources to support performance, security, etc.
+
+Self-descriptive messages:- Resources are decoupled from their representation so that their content can be 
+accessed in a variety of formats, such as HTML, XML, plain text, PDF, JPEG, JSON, and others.  
+
+*****************************************************************************************************************
+
+@Path specifies the relative path for a resource class or method.
+@GET, @PUT, @POST, @DELETE and @HEAD specify the HTTP request type of a resource.
+@Produces specifies the response Internet media types (used for content negotiation).
+@Consumes specifies the accepted request Internet media types.
+@PathParam binds the method parameter to a path segment.
+@QueryParam binds the method parameter to the value of an HTTP query parameter.
+@MatrixParam binds the method parameter to the value of an HTTP matrix parameter.
+@HeaderParam binds the method parameter to an HTTP header value.
+@CookieParam binds the method parameter to a cookie value.
+@FormParam binds the method parameter to a form value.
+@DefaultValue specifies a default value for the above bindings when the key is not found.
+@Context returns the entire context of the object (for example @Context HttpServletRequest request).
+
+*****************************************************************************************************************
+
+@RequestMapping annotation is used to map the request URI to the handler method
+
+@ResponseBody annotation is used to map the response object in the response body. Once the response object is 
+returned by the handler method, MappingJackson2HttpMessageConverter kicks in and convert it to JSON response.
+
+@PathVariable annotation is the easy way to extract the data from the rest URI and map it to the method argument.
+
+@RequestBody annotation is used to map the request body JSON data into the Employee object, again this is done by 
+the MappingJackson2HttpMessageConverter mapping.
+
+*****************************************************************************************************************
+
+Database Dialect Property:-
+
+Microsoft SQL Server 2005   org.hibernate.dialect.SQLServer2005Dialect
+Microsoft SQL Server 2008   org.hibernate.dialect.SQLServer2008Dialect
+MySQL   org.hibernate.dialect.MySQLDialect
+Oracle (any version)    org.hibernate.dialect.OracleDialect
+
+*****************************************************************************************************************
+
+Encode to Base64 format:- 
+I1
+STE=
+
+Decode to Base64 format:- 
+STE=
+I1
+
+*****************************************************************************************************************
+
+Incorrect syntax:- NUMBER data type not available in MySQL.
+
+CREATE TABLE Market(
+MarketId NUMBER(22), TermTextId NUMBER(22),
+CorpCd varchar(20), MyAgt varchar(75), MrktName varchar(75), 
+TermTextTitle varchar(25), Description varchar(75),
+AccountNumber varchar(20), CustomerId varchar(20), CustomerStatus varchar(10),
+ActiveStartDate DATE, ActiveEndDate DATE,
+ActiveFlag CHAR(1), Version NUMBER(5));
+
+Currect syntax:-
+
+CREATE TABLE Market(
+MarketId NUMERIC(22) NOT NULL, TermTextId NUMERIC(22) NOT NULL,
+CorpCd varchar(20) NOT NULL, MyAgt varchar(75) NOT NULL, MrktName varchar(75) NOT NULL, 
+TermTextTitle varchar(25) NOT NULL, Description varchar(75) NOT NULL,
+AccountNumber varchar(20) NOT NULL, CustomerId varchar(20) NOT NULL, CustomerStatus varchar(10) NOT NULL,
+ActiveStartDate DATE NOT NULL, ActiveEndDate DATE NOT NULL,
+ActiveFlag CHAR(1) NOT NULL, Version NUMERIC(5) NOT NULL);
+
+private Long marketId;  
+private Long termTextId;
+private String corpCd; 
+private String myAgt; 
+private String mrktName;
+private String termTextTitle; 
+private String description;
+private Calendar activeBeginDate;  
+private Calendar activeEndDate;
+private Boolean active;
+private double version;
+private String accountNumber; 
+private String customerId; 
+private String customerStatus;
+
+*****************************************************************************************************************
+
+MySQL data types:-
+
+http://dev.mysql.com/doc/
+http://dev.mysql.com/doc/refman/5.7/en/data-types.html
+http://dev.mysql.com/doc/refman/5.7/en/fixed-point-types.html
+https://www.techonthenet.com/mysql/datatypes.php
+http://www.peachpit.com/articles/article.aspx?p=30885&seqNum=7
+http://zetcode.com/databases/mysqltutorial/datatypes/
+http://www.w3schools.com/sqL/sql_datatypes_general.asp
+http://www.mysqltutorial.org/mysql-decimal/
+http://code.rohitink.com/2013/06/12/mysql-integer-float-decimal-data-types-differences/
+http://www.guru99.com/insert-into.html
+http://www.w3resource.com/mysql/mysql-data-types.php
+https://www.tutorialspoint.com/mysql/mysql-data-types.htm
+
+*****************************************************************************************************************
+
+Oracle data types:-
+
+https://docs.oracle.com/cd/B19306_01/olap.102/b14346/dml_datatypes002.htm
+
+*****************************************************************************************************************
+
+MySQL column data types:-
+
+Integer Types (Exact Value) - INTEGER, INT, SMALLINT, TINYINT, MEDIUMINT, BIGINT.
+Fixed-Point Types (Exact Value) - DECIMAL, NUMERIC.
+Floating-Point Types (Approximate Value) - FLOAT, DOUBLE.
+Bit-Value Type - BIT.
+Numeric Type Attributes.
+Out-of-Range and Overflow Handling.
+
+*****************************************************************************************************************

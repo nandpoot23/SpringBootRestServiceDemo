@@ -1,0 +1,63 @@
+buildscript {
+
+	ext {
+		springBootVersion = '1.4.2.RELEASE'
+	}
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'SpringBootRestServiceDemo'
+	version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	// base64 encoding & decoding
+	compile(group:'org.apache.ws.security', name:'wss4j', version:'1.6.18')
+	
+	compile(group:'org.hibernate', name:'hibernate-core', version:'4.3.3.Final'){
+        exclude group: 'javax',  module: "javaee-api"
+    }
+    compile(group:'org.hibernate', name:'hibernate-entitymanager', version:'4.3.3.Final'){
+        exclude group: 'javax',  module: "javaee-api"
+    }
+	
+	// spring orm
+	compile group: 'org.springframework', name: 'spring-orm', version: '4.3.3.RELEASE'
+	
+	// wadl generator
+    compile("org.jvnet.ws.wadl:wadl-core:1.1.6")
+    compile("org.jvnet.ws.wadl:wadl-client-plugin:1.1.6")
+
+    compile("commons-httpclient:commons-httpclient:3.1")
+	
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+	
+	runtime('mysql:mysql-connector-java')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+}
