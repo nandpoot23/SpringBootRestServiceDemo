@@ -53,9 +53,9 @@ public class SpringBootRestServiceController {
     @RequestMapping(method = RequestMethod.GET, value = "/welcome")
     public String greetingTime() {
 
-        LOG.info("starting .........");
+        LOG.info("External service starting .........");
         System.out.println(" ****** Welcome to our World! ******* ");
-        return "Welcome to our World!";
+        return "Spring in Action (Manning), Cloud Native Java, Learning Spring Boot";
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/empConfig", consumes = MediaType.APPLICATION_JSON_VALUE)
