@@ -32,8 +32,9 @@ repositories {
 
 dependencies {
 
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile("org.springframework.boot:spring-boot-starter-actuator")
 	
 	// base64 encoding & decoding
 	compile(group:'org.apache.ws.security', name:'wss4j', version:'1.6.18')

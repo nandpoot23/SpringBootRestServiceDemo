@@ -156,3 +156,12 @@ Numeric Type Attributes.
 Out-of-Range and Overflow Handling.
 
 *****************************************************************************************************************
+
+Gradle:- 
+
+compile(group: 'com.gopal.core.commons', name: 'gopal-service-model', version: '0.1.5', changing: true){
+     exclude group: "com.gopal.service", module: "my-framework"
+     exclude group: "com.gopal", module: "my-logging"
+}
+
+*****************************************************************************************************************
